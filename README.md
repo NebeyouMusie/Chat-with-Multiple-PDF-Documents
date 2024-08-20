@@ -1,7 +1,7 @@
 # Chat with Multiple PDF Documents
  - In this project I have built an app that can answer questions from your multiple PDFs using Google's gemini-1.5-flash model.
 
-![Competitive Ads Analysis App Image](./images/chat%20with%20pdf%20image.png)
+![Chat with PDFs UI Image](./images/chat%20with%20pdf%20image.png)
 
 ## DEMO
  - You can try the project live [here](https://8501-01j0bv4h1g771v2shtqjfpr66t.cloudspaces.litng.ai/)
