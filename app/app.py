@@ -6,7 +6,7 @@ st.set_page_config(page_title="ChatPDF", page_icon='📃')
 
 st.header("Chat with Multiple PDF Documents")
 
-# nitialize session state
+# initialize session state
 if "chat_history" not in st.session_state:
     st.session_state["chat_history"] = [
         AIMessage(content="Hello there👋, I can help you with your PDF's. Upload any PDF and we can chat.")
