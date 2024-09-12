@@ -59,10 +59,14 @@ def user_input(user_question, chat_history):
     embeddings = GoogleGenerativeAIEmbeddings(model = "models/embedding-001")    
     
     new_db = FAISS.load_local("../faiss_index", embeddings=embeddings, allow_dangerous_deserialization=True)
-    docs = new_db.similarity_search(user_question)
     
-    chain = get_conversational_chain() | StrOutputParser()
+    if not new_db:
+        return "You haven't uploaded any files. Please upload a file"
+    else: 
+        docs = new_db.similarity_search(user_question)
     
-    response = chain.invoke({"chat_history":chat_history, "context":docs, "question":user_question})
+        chain = get_conversational_chain() | StrOutputParser()
+    
+        response = chain.invoke({"chat_history":chat_history, "context":docs, "question":user_question})
     
     return response
